@@ -1,0 +1,11 @@
+from=""
+to=""
+cat $1 | 
+{
+	while read line; do 
+		from=$from`echo $line | cut -c1`;
+		to=$to`echo $line | cut -d ' ' -f2-`; 
+	done
+	echo $from
+	echo $to
+}
